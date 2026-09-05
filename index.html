@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muscle Map — see where a workout lands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/app.css">
+</head>
+<body>
+<a class="skip" href="#ledger">Skip to the muscle readout</a>
+
+<header class="masthead">
+  <div class="brand">
+    <h1>Muscle Map</h1>
+    <p>Build a session. Watch the load spread.</p>
+  </div>
+  <div class="tally" id="tally" aria-live="polite">
+    <span class="tally-num" id="tally-ex">0</span><span class="tally-lab">exercises</span>
+    <span class="tally-num" id="tally-sets">0</span><span class="tally-lab">sets</span>
+    <button type="button" id="clear" class="ghost" hidden>Clear session</button>
+  </div>
+</header>
+
+<main>
+  <!-- ── left: session + library ─────────────────────────────── -->
+  <section class="col picker" aria-labelledby="lib-h">
+    <div class="session" id="session-wrap" hidden>
+      <h2>Your session</h2>
+      <ul class="session-list" id="session-list"></ul>
+    </div>
+
+    <h2 id="lib-h">Exercise library</h2>
+    <div class="controls">
+      <input type="search" id="search" placeholder="Search 86 exercises" aria-label="Search exercises">
+      <div class="gear" id="gear" role="group" aria-label="Filter by equipment"></div>
+      <div class="mfilter" id="mfilter" hidden>
+        <span id="mfilter-label"></span>
+        <button type="button" id="mfilter-clear" aria-label="Show all exercises again">×</button>
+      </div>
+    </div>
+    <div class="library" id="library"></div>
+  </section>
+
+  <!-- ── centre: the figures ─────────────────────────────────── -->
+  <section class="col stage" aria-labelledby="stage-h">
+    <h2 id="stage-h" class="visually-hidden">Body map</h2>
+    <div class="stage-note" id="stage-note">Nothing selected yet — pick an exercise to light up the map.</div>
+    <div class="figures">
+      <figure><div class="slot" id="slot-front"></div><figcaption>Front</figcaption></figure>
+      <figure><div class="slot" id="slot-back"></div><figcaption>Back</figcaption></figure>
+    </div>
+    <div class="scalebar">
+      <div class="legend" id="legend">
+        <span class="legend-end">untouched</span>
+        <span class="ramp" aria-hidden="true"></span>
+        <span class="legend-end">worked hardest</span>
+      </div>
+      <div class="modes" role="radiogroup" aria-label="Scale">
+        <button type="button" role="radio" aria-checked="true" data-mode="relative">Relative</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="absolute">By volume</button>
+      </div>
+      <p class="mode-hint" id="mode-hint">Shading compares muscles inside this session: the hottest muscle sets the top of the scale.</p>
+    </div>
+  </section>
+
+  <!-- ── right: ranked readout ───────────────────────────────── -->
+  <section class="col ledger" id="ledger" aria-labelledby="ledger-h">
+    <h2 id="ledger-h">Where the work lands</h2>
+    <p class="ledger-sub" id="ledger-sub">Scores add up across everything you select.</p>
+    <ol class="meters" id="meters"></ol>
+    <div class="untouched" id="untouched" hidden>
+      <h3>Nothing here yet</h3>
+      <p id="untouched-list"></p>
+      <p class="untouched-tip">Pick one to see what trains it.</p>
+    </div>
+  </section>
+</main>
+
+<div class="tip" id="tip" role="status" hidden></div>
+
+<script src="src/data.js"></script>
+<script src="src/figure.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

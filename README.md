@@ -4,8 +4,10 @@ Pick exercises, see where the work lands. Every muscle on the two figures heats
 up in proportion to how hard the session hits it, and selecting several
 exercises adds their effects together.
 
-Open `index.html` in a browser. No build step, no dependencies, no server
-needed — it is plain HTML, CSS and three scripts.
+**[Try it →](https://rodrigohpalmeirim.github.io/muscle-map/)**
+
+Or clone it and open `index.html` in a browser. No build step, no
+dependencies, no server needed — it is plain HTML, CSS and three scripts.
 
 ## How the numbers work
 

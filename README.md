@@ -31,6 +31,27 @@ shade that score six ways:
 The weights are considered judgements from lifting practice, not EMG
 measurements. Treat them as a map, not a lab result.
 
+## Why some groups are split and others aren't
+
+A few groups are split into more than one region — the chest into upper and
+lower, the triceps into the long head and the lateral pair, the calves into
+gastrocnemius and soleus. The rule is to split **by joint action, never by
+region of a single muscle**:
+
+- The clavicular and sternal pec pull the arm along different lines, which is
+  the whole reason to incline or decline a press.
+- The triceps long head crosses the shoulder, so an overhead extension loads it
+  in a way a pushdown does not.
+- Gastrocnemius crosses the knee and soleus does not, which is exactly what
+  separates a standing from a seated calf raise.
+
+Splits that would only carve up one muscle belly — upper vs lower abs, upper
+lats, rhomboids apart from the mid traps — are deliberately absent. They add
+rows you cannot act on, and in some cases assert regional effects the evidence
+does not support. The test applied before adding a region: does at least one
+pair of exercises already in the library differ *mainly* along that axis? If
+not, the region stays merged.
+
 ## Using it
 
 - Click an exercise to add it; use `−`/`+` in **Your session** to set how many sets.
@@ -45,7 +66,7 @@ measurements. Treat them as a map, not a lab result.
 | file | what it holds |
 | --- | --- |
 | `index.html` | page structure |
-| `src/data.js` | the 20 muscle groups and 86 exercises with their weights |
+| `src/data.js` | the 23 muscle regions and 86 exercises with their weights |
 | `src/figure.js` | the anatomy plate as SVG paths, authored half-width and mirrored |
 | `src/app.css` | tokens, layout, the ember ramp |
 | `src/app.js` | selection state, score maths, rendering |

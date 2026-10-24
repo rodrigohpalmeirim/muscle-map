@@ -76,3 +76,7 @@ not, the region stays merged.
 Append an entry to `EXERCISES` in `src/data.js` with a unique `id`, a `group`
 that already exists (or a new one — groups are derived from the data), the
 `gear` it needs, and weights keyed by muscle id. Nothing else needs touching.
+
+## License
+
+[MIT](LICENSE)
